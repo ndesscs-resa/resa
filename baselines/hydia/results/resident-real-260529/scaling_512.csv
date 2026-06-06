@@ -1,0 +1,29 @@
+System,Dimension,Vectors,Mode,Status,Measured,Seconds,Throughput vectors/s,Memory MB,Memory Basis,Marker,Line
+HyDia,512,4096,resident,resident_measured,true,0.777239,5269.93627,839.7620,measured peak resident set size,filled,solid
+HyDia,512,8192,resident,resident_measured,true,0.789993,10369.7121,877.0400,measured peak resident set size,filled,solid
+HyDia,512,16384,resident,resident_measured,true,1.28027,12797.3006,942.2890,measured peak resident set size,filled,solid
+HyDia,512,32768,resident,resident_measured,true,1.56018,21002.7048,1076.5890,measured peak resident set size,filled,solid
+HyDia,512,65536,resident,resident_measured,true,3.29331,19899.7361,1567.9410,measured peak resident set size,filled,solid
+HyDia,512,131072,resident,resident_measured,true,5.971,21951.4319,2651.7340,measured peak resident set size,filled,solid
+HyDia,512,262144,resident,resident_measured,true,8.49152,30871.2692,4816.7940,measured peak resident set size,filled,solid
+HyDia,512,524288,resident,resident_measured,true,14.9985,34956.0289,9145.9380,measured peak resident set size,filled,solid
+HyDia,512,1048576,resident,resident_measured,true,26.9313,38935.2166,17800.7120,measured peak resident set size,filled,solid
+HyDia,512,2097152,resident,resident_measured,true,54.1116,38756.0523,35118.8090,measured peak resident set size,filled,solid
+HyDia,512,4194304,resident,resident_measured,true,111.284,37690.0902,69742.3500,measured peak resident set size,filled,solid
+HyDia,512,8388608,resident,resident_measured,true,203.238,41274.801,138973.7740,measured peak resident set size,filled,solid
+Resa,512,4096,storage-resident,simplessd_integrated,false,0.00256230203,1598562.52,0.0655,host result ciphertext array; one result ciphertext per storage group,square,solid
+Resa,512,8192,storage-resident,simplessd_integrated,false,0.00459223847,1783879.49,0.1311,host result ciphertext array; one result ciphertext per storage group,square,solid
+Resa,512,16384,storage-resident,simplessd_integrated,false,0.00865211133,1893641.84,0.2621,host result ciphertext array; one result ciphertext per storage group,square,solid
+Resa,512,32768,storage-resident,simplessd_integrated,false,0.0167718571,1953749.06,0.5243,host result ciphertext array; one result ciphertext per storage group,square,solid
+Resa,512,65536,storage-resident,simplessd_integrated,false,0.0330113485,1985256.67,1.0486,host result ciphertext array; one result ciphertext per storage group,square,solid
+Resa,512,131072,storage-resident,simplessd_integrated,false,0.0654903314,2001394.67,2.0972,host result ciphertext array; one result ciphertext per storage group,square,solid
+Resa,512,262144,storage-resident,simplessd_integrated,false,0.130448297,2009562.45,4.1943,host result ciphertext array; one result ciphertext per storage group,square,solid
+Resa,512,524288,storage-resident,simplessd_integrated,false,0.260364229,2013671.39,8.3886,host result ciphertext array; one result ciphertext per storage group,square,solid
+Resa,512,1048576,storage-resident,simplessd_integrated,false,0.520196092,2015732.17,16.7772,host result ciphertext array; one result ciphertext per storage group,square,solid
+Resa,512,2097152,storage-resident,simplessd_integrated,false,1.03985982,2016764.15,33.5544,host result ciphertext array; one result ciphertext per storage group,square,solid
+Resa,512,4194304,storage-resident,simplessd_integrated,false,2.07918727,2017280.53,67.1089,host result ciphertext array; one result ciphertext per storage group,square,solid
+Resa,512,8388608,storage-resident,simplessd_integrated,false,4.15784218,2017538.82,134.2177,host result ciphertext array; one result ciphertext per storage group,square,solid
+Resa,512,16777216,storage-resident,simplessd_integrated,false,8.31515199,2017667.99,268.4355,host result ciphertext array; one result ciphertext per storage group,square,solid
+Resa,512,33554432,storage-resident,simplessd_integrated,false,16.6297716,2017732.58,536.8709,host result ciphertext array; one result ciphertext per storage group,square,solid
+Resa,512,67108864,storage-resident,simplessd_integrated,false,33.2590109,2017764.88,1073.7418,host result ciphertext array; one result ciphertext per storage group,square,solid
+Resa,512,134217728,storage-resident,simplessd_integrated,false,66.5174894,2017781.03,2147.4836,host result ciphertext array; one result ciphertext per storage group,square,solid

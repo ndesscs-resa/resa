@@ -1,0 +1,136 @@
+diff --git a/src/main.cpp b/src/main.cpp
+index dffdb9d..4b03d8a 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -5,6 +5,7 @@
+ #include "openfhe.h"
+ #include <iostream>
+ #include <ctime>
++#include <string>
+ 
+ // Receiver class header files
+ #include "../include/receiver_base.h"
+@@ -41,6 +42,16 @@ int main(int argc, char *argv[]) {
+ 
+   cout << "\tRunning Setup Operations:" << endl;
+ 
++  string expMode = "full";
++  if (argc > 3) {
++    expMode = argv[3];
++  }
++  bool similarityOnly = (expMode == "similarity" || expMode == "score");
++  if (expMode != "full" && !similarityOnly) {
++    cerr << "Error: optional mode must be 'full', 'similarity', or 'score'" << endl;
++    return 1;
++  }
++
+   // Parse command line arg for experimental vector dataset
+   ifstream fileStream;
+   if (argc > 1) {
+@@ -71,7 +82,7 @@ int main(int argc, char *argv[]) {
+ 
+   // Open global experiment-tracking file
+   ofstream expStream;
+-  expStream.open(EXP_FILEPATH, ios::app);
++  expStream.open(similarityOnly ? "similarity_latency.csv" : EXP_FILEPATH, ios::app);
+   if (!expStream.is_open()) {
+     cerr << "Error: experiment file not found" << endl;
+     return 1;
+@@ -80,6 +91,9 @@ int main(int argc, char *argv[]) {
+   // Compute required multiplicative depth based on approach used
+   // Write approach used to stdout and experiment .csv file
+   size_t multDepth = OpenFHEWrapper::computeRequiredDepth(expApproach);
++  if (similarityOnly) {
++    multDepth = 1;  // score-only mode removes homomorphic thresholding
++  }
+   switch(expApproach) {
+     
+     case 1:
+@@ -107,6 +121,10 @@ int main(int argc, char *argv[]) {
+       expStream << "Diagonal," << flush;
+       break;
+   }
++  if (similarityOnly) {
++    cout << "Experimental mode: similarity-only (threshold disabled, depth = 1)" << endl;
++    expStream << "Similarity," << flush;
++  }
+ 
+   // Declare CKKS scheme elements
+   CryptoContext<DCRTPoly> cc;
+@@ -210,7 +228,11 @@ int main(int argc, char *argv[]) {
+   cout << "CKKS scheme set up (depth = " << multDepth << ", batch size = " << batchSize << ")" << endl;
+ 
+   // Log number of vectors to experiment file
+-  expStream << numVectors << "," << flush;
++  if (similarityOnly) {
++    expStream << numVectors << "," << multDepth << "," << batchSize << "," << flush;
++  } else {
++    expStream << numVectors << "," << flush;
++  }
+ 
+   // Read in query vector from file
+   vector<double> queryVector(VECTOR_DIM);
+@@ -337,6 +359,24 @@ int main(int argc, char *argv[]) {
+   expStream << duration.count() << "," << flush; // report query encryption time
+   expStream << queryCipher.size() << "," << flush; // report query communication overhead
+ 
++  if (similarityOnly) {
++    cout << "[Sender]\tComputing similarity scores... " << flush;
++    start = chrono::steady_clock::now();
++    auto scoreCipher = sender->computeSimilarity(queryCipher);
++    end = chrono::steady_clock::now();
++    duration = end - start;
++    cout << "done (" << duration.count() << "s)" << endl;
++    expStream << duration.count() << "," << flush;
++    expStream << scoreCipher.size() << endl;
++
++    expStream.close();
++    delete receiver;
++    delete sender;
++
++    cout << endl << "\tProgram successfully terminated" << endl;
++    return 0;
++  }
++
+   // Perform membership scenario
+   cout << "[Sender]\tComputing membership scenario... " << flush;
+   start = chrono::steady_clock::now();
+@@ -397,4 +437,4 @@ int main(int argc, char *argv[]) {
+ 
+   cout << endl << "\tProgram successfully terminated" << endl;
+   return 0;
+-}
+\ No newline at end of file
++}
+diff --git a/tools/setup_experiment.sh b/tools/setup_experiment.sh
+index 1cf1044..ba13ae1 100755
+--- a/tools/setup_experiment.sh
++++ b/tools/setup_experiment.sh
+@@ -15,6 +15,20 @@ printf "Decrypted Membership Result," >> $FILEPATH
+ printf "Decrypted Index Result" >> $FILEPATH
+ printf "\n"  >> $FILEPATH
+ 
++FILEPATH="similarity_latency.csv"
++
++# print .csv header for score-only similarity experiments
++printf "Experimental Approach," >> $FILEPATH
++printf "Mode," >> $FILEPATH
++printf "Database Size (vectors)," >> $FILEPATH
++printf "Depth," >> $FILEPATH
++printf "Batch Size," >> $FILEPATH
++printf "Query Encryption (seconds)," >> $FILEPATH
++printf "Query Size (ciphertexts)," >> $FILEPATH
++printf "Similarity Computation (seconds)," >> $FILEPATH
++printf "Similarity Result Size (ciphertexts)" >> $FILEPATH
++printf "\n" >> $FILEPATH
++
+ FILEPATH="accuracy.csv"
+ 
+ # print .csv header for experiment file
+@@ -24,4 +38,4 @@ printf "True Positives," >> $FILEPATH
+ printf "False Negatives," >> $FILEPATH
+ printf "True Negatives," >> $FILEPATH
+ printf "False Positives" >> $FILEPATH
+-printf "\n"  >> $FILEPATH
+\ No newline at end of file
++printf "\n"  >> $FILEPATH

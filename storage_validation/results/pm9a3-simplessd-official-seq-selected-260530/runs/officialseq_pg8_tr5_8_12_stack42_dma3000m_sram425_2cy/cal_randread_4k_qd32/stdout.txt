@@ -1,0 +1,145 @@
+SimpleSSD Standalone v2.1
+0: warn: GC threshold cannot hold minimum blocks. Adjust threshold.
+********** Begin of simulation **********
+Periodic log printout @ tick 97926340133
+hil.nvme.nvm.write.count                	0.000000            	Number of write command
+hil.nvme.nvm.read.count                 	32768.000000        	Number of read command
+hil.read.count                          	32768.000000        	Total read requests
+hil.read.pages                          	32768.000000        	Total read pages
+hil.read.latency.average                	10736189.000000     	Average read latency
+hil.read.latency.min                    	7111421.000000      	Minimum read latency
+hil.read.latency.max                    	29872505.000000     	Maximum read latency
+hil.write.count                         	0.000000            	Total write requests
+hil.write.pages                         	0.000000            	Total write pages
+hil.write.latency.average               	0.000000            	Average write latency
+hil.write.latency.min                   	0.000000            	Minimum write latency
+hil.write.latency.max                   	0.000000            	Maximum write latency
+icl.cache.dirty.count                   	0.000000            	Total dirty cachelines
+icl.cache.dirty.ratio                   	0.000000            	Total dirty cacheline ratio
+icl.manager.prefetched                  	0.000000            	Prefetched pages
+icl.manager.drained                     	0.000000            	Written pages (write-back)
+icl.manager.written                     	0.000000            	Written pages (write-through)
+icl.manager.hit                         	0.000000            	Number of cache hit
+icl.manager.miss                        	32768.000000        	Number of cache miss
+icl.manager.eviction                    	0.000000            	Number of cache eviction
+ftl.job.count                           	1.000000            	Assigned FTL background job count
+ftl.job.idletime.count                  	0.000000            	Total number of background job invocation by idletime detection
+ftl.job.idletime.usable                 	0.000000            	Total usable idletime in ms.
+ftl.job.idletime.wasted                 	25.153399           	Total wasted idletime in ms.
+ftl.job.gc.foreground                   	0.000000            	Total Foreground GC count
+ftl.job.gc.background                   	0.000000            	Total Background GC count
+ftl.job.gc.block                        	0.000000            	Total reclaimed blocks in GC
+ftl.job.gc.copy                         	0.000000            	Total valid page copy
+ftl.job.gc.penalty.average              	0.000000            	Averagy penalty / GC
+ftl.job.gc.penalty.min                  	0.000000            	Minimum penalty
+ftl.job.gc.penalty.max                  	0.000000            	Maximum penalty
+ftl.job.gc.penalty.count                	0.000000            	# penalty calculation
+ftl.base.rmw.count                      	0.000000            	Total read-modify-write operations
+ftl.base.rmw.merge_count                	0.000000            	Total merged read-modify-write operations
+ftl.base.rmw.read_pages                 	0.000000            	Total read pages in read-modify-write
+ftl.base.rmw.written_pages              	0.000000            	Total written pages in read-modify-write
+ftl.mapper.count.read                   	32768.000000        	Total read translation requests
+ftl.mapper.count.write                  	0.000000            	Total write translation requests
+ftl.mapper.count.invalidate             	0.000000            	Total invalidate requests
+ftl.mapper.count.page.read              	33554432.000000     	Total read translation requests
+ftl.mapper.count.page.write             	0.000000            	Total write translation requests
+ftl.mapper.count.page.invalidate        	0.000000            	Total invalidate requests
+ftl.allocator.wear_leveling.factor      	0.000000            	Wear-leveling factor
+ftl.allocator.erasecount.min            	0.000000            	Minimum block erased count.
+ftl.allocator.erasecount.average        	0.000000            	Average block erased count.
+ftl.allocator.erasecount.max            	0.000000            	Maximum block erased count.
+ftl.allocator.freeblock.count           	0.000000            	Total number of free/clean (super)blocks
+ftl.allocator.freeblock.ratio           	0.000000            	Ratio of free (super)block / total (super)blocks
+ftl.allocator.fullblock.count           	3.000000            	Total number of full/closed (super)blocks
+ftl.allocator.inuseblock.count          	1.000000            	Total number of inuse/open (super)blocks
+fil.nvm.energy.read                     	23563.426692        	Consumed energy by NAND read operation (uJ)
+fil.nvm.energy.program                  	0.000000            	Consumed energy by NAND program operation (uJ)
+fil.nvm.energy.erase                    	0.000000            	Consumed energy by NAND erase operation (uJ)
+fil.nvm.energy.total                    	23563.426692        	Total consumed energy by NAND (uJ)
+fil.nvm.energy.total2                   	178509.406676       	Total consumed energy by NAND (uJ) - fix
+fil.nvm.power                           	240623.990032       	Average power consumed by NAND (uW)
+fil.nvm.power2                          	1822894.702627      	Average power consumed by NAND (uW) - fix
+fil.nvm.read.count                      	32768.000000        	Total read operation count
+fil.nvm.program.count                   	0.000000            	Total program operation count
+fil.nvm.erase.count                     	0.000000            	Total erase operation count
+fil.nvm.read.bytes                      	268435456.000000    	Total read operation bytes
+fil.nvm.program.bytes                   	0.000000            	Total program operation bytes
+fil.nvm.erase.bytes                     	0.000000            	Total erase operation bytes
+fil.nvm.read.time.dma0.wait             	91620.330963        	Average dma0 wait time of read
+fil.nvm.read.time.dma0                  	1166.000000         	Average dma0 time of read
+fil.nvm.read.time.mem                   	8443064.423828      	Average memory operation time of read
+fil.nvm.read.time.dma1.wait             	72265.291931        	Average dma1 wait time of read
+fil.nvm.read.time.dma1                  	1365333.000000      	Average dma1 time of read
+fil.nvm.read.time.total                 	9973449.046722      	Average time of read
+fil.nvm.program.time.dma0.wait          	0.000000            	Average dma0 wait time of program
+fil.nvm.program.time.dma0               	0.000000            	Average dma0 time of program
+fil.nvm.program.time.mem                	0.000000            	Average memory operation time of program
+fil.nvm.program.time.dma1.wait          	0.000000            	Average dma1 wait time of program
+fil.nvm.program.time.dma1               	0.000000            	Average dma1 time of program
+fil.nvm.program.time.total              	0.000000            	Average time of program
+fil.nvm.erase.time.dma0.wait            	0.000000            	Average dma0 wait time of erase
+fil.nvm.erase.time.dma0                 	0.000000            	Average dma0 time of erase
+fil.nvm.erase.time.mem                  	0.000000            	Average memory operation time of erase
+fil.nvm.erase.time.dma1.wait            	0.000000            	Average dma1 wait time of erase
+fil.nvm.erase.time.dma1                 	0.000000            	Average dma1 time of erase
+fil.nvm.erase.time.total                	0.000000            	Average time of erase
+fil.nvm.channel.time.active             	1366499.000000      	Average active time of all channels
+fil.nvm.die.time.active                 	8443609.318567      	Average active time of all dies
+cpu.hil0.busy                           	0.000000            	CPU core 0 busy ticks
+cpu.hil0.handled_function               	60726.000000        	CPU core 0 total functions executed
+cpu.hil0.insts.branch                   	0.000000            	CPU core 0 executed branch instructions
+cpu.hil0.insts.load                     	0.000000            	CPU core 0 executed load instructions
+cpu.hil0.insts.store                    	0.000000            	CPU core 0 executed store instructions
+cpu.hil0.insts.arithmetic               	0.000000            	CPU core 0 executed arithmetic instructions
+cpu.hil0.insts.fp                       	0.000000            	CPU core 0 executed floating point instructions
+cpu.hil0.insts.others                   	0.000000            	CPU core 0 executed other instructions
+cpu.icl0.busy                           	0.000000            	CPU core 0 busy ticks
+cpu.icl0.handled_function               	65572.000000        	CPU core 0 total functions executed
+cpu.icl0.insts.branch                   	0.000000            	CPU core 0 executed branch instructions
+cpu.icl0.insts.load                     	0.000000            	CPU core 0 executed load instructions
+cpu.icl0.insts.store                    	0.000000            	CPU core 0 executed store instructions
+cpu.icl0.insts.arithmetic               	0.000000            	CPU core 0 executed arithmetic instructions
+cpu.icl0.insts.fp                       	0.000000            	CPU core 0 executed floating point instructions
+cpu.icl0.insts.others                   	0.000000            	CPU core 0 executed other instructions
+cpu.ftl0.busy                           	0.000000            	CPU core 0 busy ticks
+cpu.ftl0.handled_function               	32768.000000        	CPU core 0 total functions executed
+cpu.ftl0.insts.branch                   	0.000000            	CPU core 0 executed branch instructions
+cpu.ftl0.insts.load                     	0.000000            	CPU core 0 executed load instructions
+cpu.ftl0.insts.store                    	0.000000            	CPU core 0 executed store instructions
+cpu.ftl0.insts.arithmetic               	0.000000            	CPU core 0 executed arithmetic instructions
+cpu.ftl0.insts.fp                       	0.000000            	CPU core 0 executed floating point instructions
+cpu.ftl0.insts.others                   	0.000000            	CPU core 0 executed other instructions
+memory.sram.read.request_count          	2129920.000000      	Read request count
+memory.sram.read.bytes                  	136314880.000000    	Read data size in byte
+memory.sram.write.request_count         	4227072.000000      	Write request count
+memory.sram.write.bytes                 	270532608.000000    	Write data size in byte
+memory.sram.request_count               	6356992.000000      	Total request count
+memory.sram.bytes                       	406847488.000000    	Total data size in byte
+memory.sram.energy                      	79555636865.743286  	Total energy (pJ)
+memory.sram.power                       	812.402840          	Average power (mW)
+memory.dram.read.request_count          	32768.000000        	Read request count
+memory.dram.read.bytes                  	2097152.000000      	Read data size in byte
+memory.dram.write.request_count         	32768.000000        	Write request count
+memory.dram.write.bytes                 	2097152.000000      	Write data size in byte
+memory.dram.request_count               	65536.000000        	Total request count
+memory.dram.bytes                       	4194304.000000      	Total data size in byte
+memory.dram.energy                      	3017221011.410252   	Total energy comsumed by embedded DRAM (pJ)
+memory.dram.power                       	30.522641           	Total power comsumed by embedded DRAM (mW)
+End of log @ tick 97926340133
+*** Statistics of Request Generator ***
+I/O mode: Async (depth: 32), I/O type: Rand. Read, blocksize: 4096 bytes
+Termination mode: I/O size based (size: 134217728 bytes)
+Tick: 97926340133
+Time (ps): 5137110 - 97926340133 (97921203023) (97921.204224 us)
+I/O (bytes): 134217728 (1370.670720 MB/s)
+I/O (counts): 32768 (Read: 32768, Write: 0)
+*** End of statistics ***
+*** Statistics of Block I/O Entry ***
+Latency (ns): min=91249.569000, max=116768.302000, avg=95582.601890, stdev=371327.059094
+*** End of statistics ***
+*** Statistics of Event EventEngine ***
+Simulation Tick (ps): 97926340133
+Host time duration (sec): 1.679697
+Event handled: 19972674 (11890638.130676 ops)
+*** End of statistics ***
+End of simulation @ tick 97926340133

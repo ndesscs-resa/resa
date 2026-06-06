@@ -1,0 +1,85 @@
+{
+  "implementation": "PyTorch CUDA full-corpus HE arithmetic ranking validator",
+  "device": "cuda:1",
+  "torch_version": "2.9.1+cu128",
+  "gpu_name": "NVIDIA GeForce RTX 4090",
+  "vectors": 100000000,
+  "vectors_per_group": 4096,
+  "groups": 24415,
+  "embedding_dim": 768,
+  "queries": 1,
+  "top_k": 10,
+  "modulus_q": 2251799813554177,
+  "embedding_bits": 8,
+  "query_bits": 16,
+  "runtime_seconds": 19.008296012878418,
+  "vectors_per_second_per_query": 5260860.8331987485,
+  "he_recall@1": 1.0,
+  "he_recall@10": 1.0,
+  "he_mrr@10": 1.0,
+  "paper_metric": "MRR@10",
+  "paper_mrr@10": 1.0,
+  "top10_exact_match_rate": 1.0,
+  "cpu_crosscheck": true,
+  "per_query": [
+    {
+      "query_id": 0,
+      "plain_top10_indices": [
+        73229000,
+        41353414,
+        19070017,
+        56230487,
+        59922757,
+        51693670,
+        5733078,
+        85537884,
+        13288143,
+        29161731
+      ],
+      "he_top10_indices": [
+        73229000,
+        41353414,
+        19070017,
+        56230487,
+        59922757,
+        51693670,
+        5733078,
+        85537884,
+        13288143,
+        29161731
+      ],
+      "plain_top10_scores": [
+        225523725,
+        224390808,
+        219083102,
+        214176613,
+        210456347,
+        209325847,
+        206043520,
+        205749425,
+        203806105,
+        203619059
+      ],
+      "he_top10_scores": [
+        225523725,
+        224390808,
+        219083102,
+        214176613,
+        210456347,
+        209325847,
+        206043520,
+        205749425,
+        203806105,
+        203619059
+      ],
+      "plain_top1_he_rank": 1,
+      "reciprocal_rank@10": 1.0,
+      "top10_exact_match": true
+    }
+  ],
+  "notes": [
+    "Synthetic signed fixed-point embeddings are generated deterministically per group.",
+    "HE scores use the same 51-bit modular const x ctxt arithmetic and are decoded to signed scores.",
+    "This is a full-corpus arithmetic/ranking validation, not a semantic relevance benchmark."
+  ]
+}

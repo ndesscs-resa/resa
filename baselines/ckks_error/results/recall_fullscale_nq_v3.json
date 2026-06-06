@@ -1,0 +1,35 @@
+{
+  "implementation": "Lattigo v5 (Full-Scale CKKS)",
+  "dataset": "nq",
+  "model": "msmarco-distilbert-cos-v5",
+  "num_vectors": 2681468,
+  "num_queries": 3452,
+  "dim": 768,
+  "params": {
+    "N": 4096,
+    "logQ": "51",
+    "scale": "ctxt=2^26, const=2^23, product=2^49"
+  },
+  "he_sample_size": 1000,
+  "he_max_error": 0.00001089736856393908,
+  "he_mean_error": 0.0000017432476116833331,
+  "he_std_error": 0.0000013168525545121795,
+  "he_rank_correlation": 0.9999999408516117,
+  "he_sample_recall@1": 1,
+  "he_sample_recall@10": 1,
+  "he_sample_mrr@10": 1,
+  "paper_metric": "MRR@10",
+  "paper_mrr@10": 1,
+  "score_gap_min": 0.01568038253850479,
+  "score_gap_mean": 0.12268428130490114,
+  "safety_margin": 1438.9145825895412,
+  "runtime_seconds_total": 1857.184534891,
+  "peak_memory_gb": 0.539680768,
+  "workers": 30,
+  "reproducibility": {
+    "seed": 42,
+    "go_version": "go1.23.6",
+    "num_cpu": 32,
+    "lattigo_version": "v5.0.7"
+  }
+}

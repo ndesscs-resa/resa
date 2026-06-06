@@ -1,0 +1,51 @@
+=== HyDia native resident score-only 2_12.dat (4096 vectors) ===
+6.9M	/path/to/image_matching/test/2_12.dat
+/dev/nvme0n1    7.0T  3.6G  6.6T   1% /path/to/result-volume
+/dev/nvme0n1    7.0T  3.6G  6.6T   1% /path/to/result-volume
+=== HyDia native resident score-only 2_13.dat (8192 vectors) ===
+14M	/path/to/image_matching/test/2_13.dat
+/dev/nvme0n1    7.0T  3.7G  6.6T   1% /path/to/result-volume
+/dev/nvme0n1    7.0T  3.7G  6.6T   1% /path/to/result-volume
+=== HyDia native resident score-only 2_14.dat (16384 vectors) ===
+28M	/path/to/image_matching/test/2_14.dat
+/dev/nvme0n1    7.0T  4.0G  6.6T   1% /path/to/result-volume
+/dev/nvme0n1    7.0T  4.0G  6.6T   1% /path/to/result-volume
+=== HyDia native resident score-only 2_15.dat (32768 vectors) ===
+55M	/path/to/image_matching/test/2_15.dat
+/dev/nvme0n1    7.0T  4.5G  6.6T   1% /path/to/result-volume
+/dev/nvme0n1    7.0T  4.5G  6.6T   1% /path/to/result-volume
+=== HyDia native resident score-only 2_16.dat (65536 vectors) ===
+109M	/path/to/image_matching/test/2_16.dat
+/dev/nvme0n1    7.0T  5.6G  6.6T   1% /path/to/result-volume
+/dev/nvme0n1    7.0T  5.6G  6.6T   1% /path/to/result-volume
+=== HyDia native resident score-only 2_17.dat (131072 vectors) ===
+218M	/path/to/image_matching/test/2_17.dat
+/dev/nvme0n1    7.0T  7.9G  6.6T   1% /path/to/result-volume
+/dev/nvme0n1    7.0T  7.9G  6.6T   1% /path/to/result-volume
+=== HyDia native resident score-only 2_18.dat (262144 vectors) ===
+436M	/path/to/image_matching/test/2_18.dat
+/dev/nvme0n1    7.0T   13G  6.6T   1% /path/to/result-volume
+/dev/nvme0n1    7.0T   13G  6.6T   1% /path/to/result-volume
+=== HyDia native resident score-only 2_19.dat (524288 vectors) ===
+872M	/path/to/image_matching/test/2_19.dat
+/dev/nvme0n1    7.0T   22G  6.6T   1% /path/to/result-volume
+/dev/nvme0n1    7.0T   22G  6.6T   1% /path/to/result-volume
+=== HyDia native resident score-only 2_20.dat (1048576 vectors) ===
+1.8G	/path/to/image_matching/test/2_20.dat
+/dev/nvme0n1    7.0T   40G  6.6T   1% /path/to/result-volume
+/dev/nvme0n1    7.0T   40G  6.6T   1% /path/to/result-volume
+=== HyDia native resident score-only 2_21.dat (2097152 vectors) ===
+3.5G	/path/to/image_matching/test/2_21.dat
+/dev/nvme0n1    7.0T   76G  6.6T   2% /path/to/result-volume
+/dev/nvme0n1    7.0T   76G  6.6T   2% /path/to/result-volume
+=== HyDia native resident score-only 2_22.dat (4194304 vectors) ===
+6.9G	/path/to/image_matching/test/2_22.dat
+/dev/nvme0n1    7.0T  147G  6.5T   3% /path/to/result-volume
+/dev/nvme0n1    7.0T  147G  6.5T   3% /path/to/result-volume
+=== HyDia native resident score-only 2_23.dat (8388608 vectors) ===
+14G	/path/to/image_matching/test/2_23.dat
+/dev/nvme0n1    7.0T  291G  6.3T   5% /path/to/result-volume
+/dev/nvme0n1    7.0T  291G  6.3T   5% /path/to/result-volume
+=== HyDia native resident score-only 2_24.dat (16777216 vectors) ===
+28G	/path/to/image_matching/test/2_24.dat
+resident run failed at 2_24.dat (exit 137); stopping

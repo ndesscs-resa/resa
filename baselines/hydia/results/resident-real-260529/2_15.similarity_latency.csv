@@ -1,0 +1,2 @@
+Experimental Approach,Mode,Database Size (vectors),Depth,Batch Size,Query Encryption (seconds),Query Size (ciphertexts),Similarity Computation (seconds),Similarity Result Size (ciphertexts)
+Diagonal,Similarity,32768,1,4096,0.00462361,1,1.56018,8

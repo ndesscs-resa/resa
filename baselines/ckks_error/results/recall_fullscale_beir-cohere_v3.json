@@ -1,0 +1,35 @@
+{
+  "implementation": "Lattigo v5 (Full-Scale CKKS)",
+  "dataset": "beir-cohere",
+  "model": "Cohere-embed-english-v3",
+  "num_vectors": 8841823,
+  "num_queries": 10000,
+  "dim": 1024,
+  "params": {
+    "N": 4096,
+    "logQ": "51",
+    "scale": "ctxt=2^26, const=2^23, product=2^49"
+  },
+  "he_sample_size": 1000,
+  "he_max_error": 0.000011800722700672922,
+  "he_mean_error": 0.0000017430983904464761,
+  "he_std_error": 0.0000013168135094531063,
+  "he_rank_correlation": 0.9999999248703353,
+  "he_sample_recall@1": 1,
+  "he_sample_recall@10": 1,
+  "he_sample_mrr@10": 1,
+  "paper_metric": "MRR@10",
+  "paper_mrr@10": 1,
+  "score_gap_min": 0.005834303704120192,
+  "score_gap_mean": 0.09656979751679114,
+  "safety_margin": 494.4022372280214,
+  "runtime_seconds_total": 10817.586579344,
+  "peak_memory_gb": 1.106640896,
+  "workers": 30,
+  "reproducibility": {
+    "seed": 42,
+    "go_version": "go1.23.6",
+    "num_cpu": 32,
+    "lattigo_version": "v5.0.7"
+  }
+}

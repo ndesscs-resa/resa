@@ -1,0 +1,10 @@
+Latency scaling caption:
+512D score latency as database size increases. Resa is the storage-resident
+PM9A3-anchored model using the selected storage profile. HyDia
+points are resident score-path measurements from resident run
+over 4K--8M.
+
+Memory scaling caption:
+Memory scaling for the same 512D setting. HyDia resident points use
+peak resident-set size. Resa reports the host memory occupied by result ciphertexts
+after SSD-controller DMA writeback.

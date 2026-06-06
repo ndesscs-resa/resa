@@ -1,0 +1,31 @@
+Current RTL synthesis summary
+=============================
+
+This file is a human-readable Middleware synthesis-size record only. The
+submission area/power arithmetic check is:
+
+  cd asic
+  make verify-results
+
+That check reports mapped standard-cell area plus PCACTI SRAM macro area only.
+It does not report placed-and-routed or signoff area.
+
+Recorded current-RTL results
+----------------------------
+
+Top module: he_accelerator_seeded_a
+Technology: ASAP7 7nm RVT, logic only, SRAM blackboxed
+
+Total cells: 492,697
+Cell area: 54,721.495620 ASAP7 units
+Mapped standard-cell area: 0.063805 mm^2
+SRAM area: 0.0285 mm^2, from PCACTI methodology input
+Total mapped-cell + SRAM footprint: 0.0923 mm^2, reported as 0.092 mm^2
+
+Regenerating a log
+------------------
+
+Use `make verify-results` for the Middleware arithmetic check. To keep a local raw
+synthesis log, run `make synth` after setting `ASAP7_LIB_DIR`, or run the Yosys
+command from `syn/README.md` manually. Do not interpret this summary as a
+place-and-route or signoff report.

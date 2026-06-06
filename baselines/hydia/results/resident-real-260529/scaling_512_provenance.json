@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "figure": "hydia_scaling_512",
+  "dimension": 512,
+  "csd_csv": "storage_validation/results/pm9a3-csd-scaling-hydia512-simplessdseq-260530/scaling_512.csv",
+  "hydia_latency_csv": "baselines/hydia/results/resident-real-260529/similarity_latency.csv",
+  "hydia_rss_csv": "baselines/hydia/results/resident-real-260529/similarity_rss.csv",
+  "hydia_failure_vectors": 16777216,
+  "boundary": "Resa rows are imported from the PM9A3-anchored storage-stream model and RTL cycle counts. HyDia rows are measured resident score-path rows.",
+  "key_rows": {
+    "csd_2^23_s": 4.157842179457647,
+    "csd_2^24_s": 8.31515199331551,
+    "hydia_2^23_s": 203.238,
+    "csd_2^23_host_result_memory_mb": 134.217728,
+    "csd_2^24_host_result_memory_mb": 268.435456,
+    "hydia_2^23_peak_rss_mb": 138973.774,
+    "speedup_at_2^23": 48.88064318653638
+  }
+}

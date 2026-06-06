@@ -1,0 +1,52 @@
+diff --git a/util/interface.hh b/util/interface.hh
+--- a/util/interface.hh
++++ b/util/interface.hh
+@@ -24,6 +24,7 @@ enum class Generation : uint8_t {
+   Gen1,  // PCI Express Gen. 1.x
+   Gen2,  // PCI Express Gen. 2.x
+   Gen3,  // PCI Express Gen. 3.x
++  Gen4,  // PCI Express Gen. 4.x
+   Size,
+ };
+ 
+diff --git a/util/interface.cc b/util/interface.cc
+--- a/util/interface.cc
++++ b/util/interface.cc
+@@ -18,10 +18,10 @@ namespace PCIExpress {
+ const uint32_t packetOverhead = 36;
+ //! Internal delay in symbol unit defined in spec
+-const uint32_t internalDelay[(uint8_t)Generation::Size] = {19, 70, 115};
++const uint32_t internalDelay[(uint8_t)Generation::Size] = {19, 70, 115, 115};
+ //! Encoding ratio
+-const float encoding[(uint8_t)Generation::Size] = {1.25f, 1.25f, 1.015625f};
++const float encoding[(uint8_t)Generation::Size] = {1.25f, 1.25f, 1.015625f, 1.015625f};
+ //! Required time to transfer one symbol in ps
+-const uint32_t delay[(uint8_t)Generation::Size] = {3200, 1600, 1000};
++const uint32_t delay[(uint8_t)Generation::Size] = {3200, 1600, 1000, 500};
+ 
+ //! Make PCI Express delay function
+ DelayFunction makeFunction(Generation gen, uint8_t lane) {
+diff --git a/hil/config.cc b/hil/config.cc
+--- a/hil/config.cc
++++ b/hil/config.cc
+@@ -269,7 +269,7 @@ void Config::update() noexcept {
+   panic_if(requestQueueSize == 0, "Invalid request queue size.");
+ 
+   pcieGen = (PCIExpress::Generation)((uint8_t)pcieGen - 1);
+-  panic_if((uint8_t)pcieGen > 2, "Invalid PCIe generation %u.",
++  panic_if((uint8_t)pcieGen > 3, "Invalid PCIe generation %u.",
+            (uint8_t)pcieGen + 1);
+   panic_if(popcount16(pcieLane) != 1 || pcieLane > 32, "Invalid PCIe lane %u.",
+            pcieLane);
+diff --git a/config/sample.xml b/config/sample.xml
+--- a/config/sample.xml
++++ b/config/sample.xml
+@@ -262,7 +262,7 @@
+     <section name="interface">
+       <!-- PCIe configuration -->
+       <section name="pcie">
+-        <!-- <int:u8> PCIe Generation (1 ~ 3) -->
++        <!-- <int:u8> PCIe Generation (1 ~ 4) -->
+         <config name="Generation">3</config>
+         <!-- <int:u8> PCIe Lane (1 ~ 32, power of 2) -->
+         <config name="Lane">4</config>

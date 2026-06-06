@@ -1,0 +1,62 @@
+diff --git a/igl/block_io.cc b/igl/block_io.cc
+index 17761de..d9c482c 100644
+--- a/igl/block_io.cc
++++ b/igl/block_io.cc
+@@ -37,32 +37,42 @@ BlockIOLayer::BlockIOLayer(ObjectData &o, Driver::AbstractInterface *i,
+ BlockIOLayer::~BlockIOLayer() {}
+ 
+ void BlockIOLayer::dispatch(uint64_t now) {
+-  auto &iter = submissionQueue.front();
+-  auto ret = dispatchedQueue.emplace(iter.tag, std::move(iter));
++  while (submissionQueue.size() > 0) {
++    auto &iter = submissionQueue.front();
++    uint64_t dispatchAt = iter.submittedAt + submissionLatency;
+ 
+-  submissionQueue.pop_front();
++    if (dispatchAt > now) {
++      scheduleAbs(eventDispatch, 0, dispatchAt);
+ 
+-  panic_if(!ret.second, "Request ID conflict.");
++      return;
++    }
+ 
+-  if (submissionQueue.size() > 0) {
+-    scheduleAbs(eventDispatch, 0, now + submissionLatency);
+-  }
++    auto ret = dispatchedQueue.emplace(iter.tag, std::move(iter));
++
++    submissionQueue.pop_front();
++
++    panic_if(!ret.second, "Request ID conflict.");
+ 
+-  pInterface->submit(ret.first->second);
++    pInterface->submit(ret.first->second);
++  }
+ }
+ 
+ void BlockIOLayer::completion(uint64_t now) {
+-  auto &iter = completionQueue.front();
++  while (completionQueue.size() > 0) {
++    auto &iter = completionQueue.front();
++    uint64_t completeAt = iter.completedAt + completionLatency;
+ 
+-  calculateStat(now);
++    if (completeAt > now) {
++      scheduleAbs(eventCompletion, 0, completeAt);
++
++      return;
++    }
+ 
+-  object.engine->invoke(iglCallback, iter.tag);
++    calculateStat(now);
+ 
+-  completionQueue.pop_front();
++    object.engine->invoke(iglCallback, iter.tag);
+ 
+-  if (completionQueue.size() > 0) {
+-    scheduleAbs(eventCompletion, 0,
+-                completionQueue.front().completedAt + completionLatency);
++    completionQueue.pop_front();
+   }
+ }
+ 

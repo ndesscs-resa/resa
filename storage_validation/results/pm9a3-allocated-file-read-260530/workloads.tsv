@@ -1,0 +1,8 @@
+split	name	rw	bs	iodepth	numjobs
+calibration	alloc_randread_4k_qd1	randread	4K	1	1
+calibration	alloc_randread_4k_qd32	randread	4K	32	1
+calibration	alloc_randread_4k_qd32_nj4	randread	4K	32	4
+calibration	alloc_seqread_1m_qd32	read	1M	32	1
+holdout	alloc_randread_16k_qd8	randread	16K	8	1
+holdout	alloc_randread_4k_qd64_nj4	randread	4K	64	4
+holdout	alloc_seqread_1m_qd8	read	1M	8	1

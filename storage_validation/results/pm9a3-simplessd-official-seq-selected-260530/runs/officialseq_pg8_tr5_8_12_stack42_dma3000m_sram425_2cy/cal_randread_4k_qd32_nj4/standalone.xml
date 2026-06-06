@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<standalone version="2.1-unknown">
+  <section name="sim">
+    <config name="Mode">0</config>
+    <config name="LogPeriod">0</config>
+    <config name="OutputDirectory">simout</config>
+    <config name="StatLogFile"></config>
+    <config name="DebugLogFile"></config>
+    <config name="LatencyLogFile"></config>
+    <config name="ProgressPeriod">0</config>
+    <config name="Interface">1</config>
+    <config name="SubmissionLatency">42us</config>
+    <config name="CompletionLatency">42us</config>
+  </section>
+  <section name="generator">
+    <config name="io_size">256M</config>
+    <config name="readwrite">randread</config>
+    <config name="rwmixread">0.5</config>
+    <config name="blocksize">4K</config>
+    <config name="blockalign">4K</config>
+    <config name="iomode">async</config>
+    <config name="iodepth">128</config>
+    <config name="offset">0</config>
+    <config name="size">8G</config>
+    <config name="thinktime">0</config>
+    <config name="randseed">13245</config>
+    <config name="time_based">false</config>
+    <config name="runtime">10s</config>
+  </section>
+  <section name="trace">
+    <config name="File">./test.txt</config>
+    <config name="TimingMode">0</config>
+    <config name="IODepth">32</config>
+    <config name="IOSizeLimit">0</config>
+    <config name="IOCountLimit">0</config>
+    <config name="WrapTrace">0</config>
+    <config name="Regex">\d+,\d+ +\d+ +\d+ +(\d+).(\d+) +\d+ +D +(\w+) +(\d+) \+ (\d+).*</config>
+    <config name="Operation">3</config>
+    <config name="ByteOffset">0</config>
+    <config name="ByteLength">0</config>
+    <config name="LBAOffset">4</config>
+    <config name="LBALength">5</config>
+    <config name="Second">1</config>
+    <config name="Millisecond">0</config>
+    <config name="Microsecond">0</config>
+    <config name="Nanosecond">2</config>
+    <config name="Picosecond">0</config>
+    <config name="LBASize">512</config>
+    <config name="UseHexadecimal">false</config>
+  </section>
+</standalone>

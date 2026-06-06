@@ -1,0 +1,24 @@
+{
+  "implementation": "Lattigo v5",
+  "dataset": "Synthetic-128-normalized",
+  "num_vectors": 1000,
+  "num_queries": 5,
+  "dim": 128,
+  "params": {
+    "N": 4096,
+    "logQ": "51",
+    "scale": "ctxt=2^26, const=2^23, product=2^49"
+  },
+  "recall@1": 1,
+  "recall@10": 1,
+  "recall@100": 1,
+  "mrr@10": 1,
+  "max_error": 0.000008520269165347705,
+  "mean_error": 0.0000017150314879631638,
+  "std_error": 0.0000013047304561285757,
+  "rank_correlation": 0.999999927999928,
+  "runtime_seconds_avg": 0.011102374,
+  "runtime_seconds_total": 0.055511872,
+  "encryption_seconds": 0.06274432,
+  "memory_gb": 0.022417408
+}

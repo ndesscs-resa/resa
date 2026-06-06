@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<simplessd version="2.1-unknown">
+  <section name="sim">
+    <config name="OutputDirectory">results/pm9a3-simplessd-official-seq-selected-260530/runs/officialseq_pg8_tr5_8_12_stack42_dma3000m_sram425_2cy/cal_randread_4k_qd32_nj4</config>
+    <config name="OutputFile"></config>
+    <config name="ErrorFile">STDERR</config>
+    <config name="DebugFile"></config>
+    <config name="Controller">1</config>
+  </section>
+  <section name="cpu">
+    <config name="ClockSpeed">400m</config>
+    <config name="UseDedicatedCore">true</config>
+    <config name="HILCoreCount">1</config>
+    <config name="ICLCoreCount">1</config>
+    <config name="FTLCoreCount">1</config>
+  </section>
+  <section name="memory">
+    <config name="BusClock">425m</config>
+    <section name="sram">
+      <config name="Size">72M</config>
+      <config name="DataRate">2</config>
+      <config name="DataWidth">36</config>
+      <config name="Clock">425m</config>
+      <config name="ReadLatency">2</config>
+      <config name="WriteLatency">2</config>
+      <config name="IDD">750</config>
+      <config name="ISB1">320</config>
+      <config name="VCC">1.79999995</config>
+    </section>
+    <section name="dram">
+      <config name="Model">0</config>
+      <section name="struct">
+        <config name="Channel">1</config>
+        <config name="Rank">1</config>
+        <config name="Bank">8</config>
+        <config name="Chip">1</config>
+        <config name="BusWidth">16</config>
+        <config name="BurstChop">16</config>
+        <config name="BurstLength">32</config>
+        <config name="ChipSize">1G</config>
+        <config name="RowBufferSize">4K</config>
+      </section>
+      <section name="timing">
+        <config name="tCK">1250</config>
+        <config name="tRAS">32ns</config>
+        <config name="tRRD">13750</config>
+        <config name="tRCD">13750</config>
+        <config name="tCCD">10ns</config>
+        <config name="tRP">13750</config>
+        <config name="tRPab">35ns</config>
+        <config name="tRL">15ns</config>
+        <config name="tWL">7500</config>
+        <config name="tDQSCK">3500</config>
+        <config name="tWR">18ns</config>
+        <config name="tWTR">10ns</config>
+        <config name="tRTP">160ns</config>
+        <config name="tRFC">7800ns</config>
+        <config name="tRFCab">7500</config>
+        <config name="tREFI">3904ns</config>
+        <config name="tSR">15ns</config>
+        <config name="tXSV">6ns</config>
+        <config name="tFAW">40ns</config>
+      </section>
+      <section name="power">
+        <config name="IDD0_0">40</config>
+        <config name="IDD0_1">0</config>
+        <config name="IDD2P0_0">12</config>
+        <config name="IDD2P0_1">0</config>
+        <config name="IDD2P1_0">14</config>
+        <config name="IDD2P1_1">0</config>
+        <config name="IDD2N_0">21</config>
+        <config name="IDD2N_1">0</config>
+        <config name="IDD3P0_0">21</config>
+        <config name="IDD3P0_1">0</config>
+        <config name="IDD3P1_0">21</config>
+        <config name="IDD3P1_1">0</config>
+        <config name="IDD3N_0">34</config>
+        <config name="IDD3N_1">0</config>
+        <config name="IDD4R_0">100</config>
+        <config name="IDD4R_1">0</config>
+        <config name="IDD4W_0">105</config>
+        <config name="IDD4W_1">0</config>
+        <config name="IDD5_0">182</config>
+        <config name="IDD5_1">0</config>
+        <config name="IDD6_0">12</config>
+        <config name="IDD6_1">0</config>
+        <config name="VDD_0">1.35000002</config>
+        <config name="VDD_1">0</config>
+      </section>
+      <section name="controller">
+        <config name="WriteQueueSize">64</config>
+        <config name="ReadQueueSize">64</config>
+        <config name="WriteThreshold">0.5</config>
+        <config name="ForceWriteThreshold">0.850000024</config>
+        <config name="MinWriteBurst">16</config>
+        <config name="Scheduling">1</config>
+        <config name="Mapping">1</config>
+        <config name="PagePolicy">1</config>
+      </section>
+    </section>
+  </section>
+  <section name="hil">
+    <config name="WorkInterval">1us</config>
+    <config name="RequestQueueSize">1K</config>
+    <section name="interface">
+      <section name="pcie">
+        <config name="Generation">4</config>
+        <config name="Lane">4</config>
+      </section>
+      <section name="sata">
+        <config name="Generation">3</config>
+      </section>
+      <section name="mphy">
+        <config name="Mode">2</config>
+        <config name="Lane">2</config>
+      </section>
+    </section>
+    <section name="disk" nsid="1">
+      <config name="EnableDiskImage">false</config>
+      <config name="StrickSizecheck">false</config>
+      <config name="UseCopyOnWriteDisk">true</config>
+      <config name="DiskImagePath"></config>
+    </section>
+    <section name="nvme">
+      <config name="MaxSQ">16</config>
+      <config name="MaxCQ">16</config>
+      <config name="WRRHigh">2</config>
+      <config name="WRRMedium">2</config>
+      <config name="MaxNamespace">16</config>
+      <config name="DefaultNamespace">1</config>
+      <config name="AttachDefaultNamespaces">true</config>
+      <section name="namespace" nsid="1">
+        <config name="LBASize">512</config>
+        <config name="Capacity">8G</config>
+        <config name="CommandSet">0</config>
+        <section name="kv">
+          <config name="MaxKeySize">16</config>
+          <config name="MaxValueSize">1M</config>
+          <config name="MaxKeyCount">0</config>
+        </section>
+        <section name="zns">
+          <config name="ZoneSize">1M</config>
+          <config name="MaxActiveZones">0</config>
+          <config name="MaxOpenZones">0</config>
+        </section>
+      </section>
+    </section>
+  </section>
+  <section name="icl">
+    <config name="CacheMode">0</config>
+    <config name="CacheSize">512M</config>
+    <section name="prefetch">
+      <config name="EnableReadPrefetch">false</config>
+      <config name="PrefetchCount">4</config>
+      <config name="PrefetchRatio">32</config>
+      <config name="PrefetchMode">0</config>
+    </section>
+    <section name="eviction">
+      <config name="EvictPolicy">1</config>
+      <config name="EvictMode">1</config>
+      <config name="EvictThreshold">0.0500000007</config>
+    </section>
+    <section name="setassoc">
+      <config name="WaySize">8</config>
+    </section>
+  </section>
+  <section name="ftl">
+    <config name="MappingMode">0</config>
+    <section name="common">
+      <config name="OverProvisioningRatio">0.200000003</config>
+      <config name="SuperpageAllocation">CWDP</config>
+      <config name="MergeReadModifyWrite">false</config>
+    </section>
+    <section name="background">
+      <section name="idletime">
+        <config name="Mode">0</config>
+        <config name="IdletimeThreshold">1s</config>
+      </section>
+      <section name="gc">
+        <config name="Mode">0</config>
+        <section name="trigger">
+          <config name="ForegroundThreshold">0.0500000007</config>
+          <config name="BackgroundThreshold">0.100000001</config>
+        </section>
+        <section name="blockselection">
+          <config name="VictimSelectionPolicy">0</config>
+          <config name="SamplingFactor">3</config>
+        </section>
+        <section name="blockerase">
+          <config name="ForegroundBlockEraseLevel">3</config>
+          <config name="BackgroundBlockEraseLevel">0</config>
+        </section>
+      </section>
+      <section name="wearleveling">
+        <config name="Mode">0</config>
+        <config name="StaticThreshold">0.800000012</config>
+      </section>
+      <section name="readreclaim">
+        <config name="Mode">0</config>
+      </section>
+    </section>
+    <section name="warmup">
+      <config name="FillingMode">0</config>
+      <config name="FillRatio">1</config>
+      <config name="InvalidFillRatio">0</config>
+      <config name="EraseCount">0</config>
+    </section>
+  </section>
+  <section name="fil">
+    <config name="Channel">8</config>
+    <config name="Way">4</config>
+    <config name="Model">0</config>
+    <config name="Scheduler">0</config>
+    <section name="nand">
+      <config name="NOP">1</config>
+      <config name="Die">8</config>
+      <config name="Plane">4</config>
+      <config name="Block">4</config>
+      <config name="Page">512</config>
+      <config name="PageSize">8K</config>
+      <config name="SpareSize">1216</config>
+      <config name="DMASpeed">3g</config>
+      <config name="DataWidth">16</config>
+      <config name="NANDType">2</config>
+      <config name="PageAllocation">CWDP</config>
+      <section name="timing">
+        <config name="tADL">70ns</config>
+        <config name="tCS">20ns</config>
+        <config name="tDH">280</config>
+        <config name="tDS">280</config>
+        <config name="tRC">5ns</config>
+        <config name="tRR">20ns</config>
+        <config name="tWB">100ns</config>
+        <config name="tWC">25ns</config>
+        <config name="tWP">11ns</config>
+        <config name="tBERS">5ms</config>
+        <config name="tCBSY">35us</config>
+        <config name="tDBSY">500ns</config>
+        <config name="tRCBSY">3us</config>
+        <config name="tPROG" level="0">450us</config>
+        <config name="tR" level="0">5us</config>
+        <config name="tPROG" level="1">900us</config>
+        <config name="tR" level="1">8us</config>
+        <config name="tPROG" level="2">1350us</config>
+        <config name="tR" level="2">12us</config>
+      </section>
+      <section name="power">
+        <config name="VCC">3300</config>
+        <config name="ICC1">25k</config>
+        <config name="ICC2">25k</config>
+        <config name="ICC3">25k</config>
+        <config name="ICC4R">10k</config>
+        <config name="ICC4W">10k</config>
+        <config name="ICC5">5k</config>
+        <config name="ISB">30</config>
+      </section>
+    </section>
+  </section>
+</simplessd>

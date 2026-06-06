@@ -1,0 +1,9 @@
+split,name,rw,op,bs,iodepth,numjobs,runtime_ms,bw_mb_s,iops,clat_mean_us,clat_p50_us,clat_p99_us,clat_p999_us,source
+calibration,alloc_randread_4k_qd1,randread,read,4K,1,1,180001,48.031,11726.418,78.037,74.240,175.104,199.680,storage_validation/results/pm9a3-allocated-file-read-260530/calibration.alloc_randread_4k_qd1.json
+calibration,alloc_randread_4k_qd32,randread,read,4K,32,1,180001,1547.468,377799.712,82.624,78.336,154.624,203.776,storage_validation/results/pm9a3-allocated-file-read-260530/calibration.alloc_randread_4k_qd32.json
+calibration,alloc_randread_4k_qd32_nj4,randread,read,4K,32,4,180001,3788.461,924916.523,135.733,113.152,370.688,544.768,storage_validation/results/pm9a3-allocated-file-read-260530/calibration.alloc_randread_4k_qd32_nj4.json
+calibration,alloc_seqread_1m_qd32,read,read,1M,32,1,180006,6734.465,6422.314,4946.319,4947.968,5341.184,5603.328,storage_validation/results/pm9a3-allocated-file-read-260530/calibration.alloc_seqread_1m_qd32.json
+holdout,alloc_randread_16k_qd8,randread,read,16K,8,1,180001,1278.200,78015.072,95.411,93.696,150.528,183.296,storage_validation/results/pm9a3-allocated-file-read-260530/holdout.alloc_randread_16k_qd8.json
+holdout,alloc_randread_4k_qd64_nj4,randread,read,4K,64,4,180001,4487.283,1095526.569,231.336,181.248,806.912,1236.992,storage_validation/results/pm9a3-allocated-file-read-260530/holdout.alloc_randread_4k_qd64_nj4.json
+holdout,alloc_seqread_1m_qd8,read,read,1M,8,1,180002,6714.191,6403.112,1204.056,1204.224,1564.672,1794.048,storage_validation/results/pm9a3-allocated-file-read-260530/holdout.alloc_seqread_1m_qd8.json
+prepare,write_1m_qd32,write,write,1M,32,1,33056,4157.761,3965.150,7986.286,7962.624,8847.360,22675.456,storage_validation/results/pm9a3-allocated-file-read-260530/prepare.write_1m_qd32.json

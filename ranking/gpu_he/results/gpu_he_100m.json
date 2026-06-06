@@ -1,0 +1,24 @@
+{
+  "implementation": "PyTorch CUDA exact split-limb const-x-ctxt validator",
+  "device": "cuda:1",
+  "torch_version": "2.9.1+cu128",
+  "gpu_name": "NVIDIA GeForce RTX 4090",
+  "vectors_requested": 100000000,
+  "vectors_per_group": 4096,
+  "groups": 24415,
+  "embedding_dim": 768,
+  "polys_per_ciphertext": 2,
+  "modulus_q": 2251799813554177,
+  "query_bits": 23,
+  "coeff_bits": 51,
+  "coeff_mac_count": 153600000000,
+  "runtime_seconds": 31.94745397567749,
+  "vectors_per_second": 3130139.887708512,
+  "coeff_macs_per_second": 4807894867.520275,
+  "cpu_crosscheck": false,
+  "notes": [
+    "Synthetic ciphertext coefficients are generated deterministically per group.",
+    "Signed 23-bit query scalars validate the modular output of CKKS plaintext constants.",
+    "This validates coefficient-domain HE arithmetic, not semantic recall."
+  ]
+}

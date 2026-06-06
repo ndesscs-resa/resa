@@ -1,0 +1,16 @@
+{
+  "netlist": "asic/syn/synth_seeded_a_logic_only.v",
+  "liberty_dir": "${ASAP7_LIB_DIR:-../asic-tools/asap7/asap7sc7p5t_28/LIB/NLDM}",
+  "missing_cell_types": [],
+  "leakage_mw": 0.05365483032541035,
+  "net_switching_mw": 89.06793584437989,
+  "internal_switching_mw": 69.15398602544983,
+  "dynamic_mw": 158.2219218698297,
+  "total_mw": 158.2755767001551,
+  "frequency_mhz": 500.0,
+  "voltage_v": 0.7,
+  "signal_activity": 0.5,
+  "clock_transitions_per_cycle": 2.0,
+  "clock_load_fF": 16056.082517003038,
+  "signal_load_fF": 662860.8604983543
+}

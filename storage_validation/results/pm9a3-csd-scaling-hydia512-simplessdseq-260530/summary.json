@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "integration_kind": "simplessd_profile_plus_device_local_csd_scaling",
+  "candidate": "officialseq_pg8_tr5_8_12_stack42_dma3000m_sram425_2cy",
+  "workload": "hold_seqread_1m_qd8",
+  "profile_manifest": "storage_validation/profiles/pm9a3-memory-prior-selected.json",
+  "datapath_profile": "storage_validation/profiles/resa-datapath-selected.json",
+  "stream_source": "simplessd_seq",
+  "profile_boundary": "PM9A3-class SimpleSSD-selected storage profile plus Resa datapath timing.",
+  "profile_role": "selected_pm9a3_class_simplessd_profile_for_csd_sequential_scan",
+  "storage_stream": {
+    "source": "simplessd_host_read_validation",
+    "bw_bytes_s": 6715229000.0,
+    "bw_mb_s": 6715.229,
+    "raw_page_bw_mb_s": 7706.491063029164,
+    "efficiency_vs_raw": 0.8713730989990233,
+    "page_service_us": 8.503999999999998,
+    "avg_tr_us": 8.333333333333332,
+    "dma1_us": 0.17066666666666666,
+    "read_parallel_units": 8
+  },
+  "storage_params": {
+    "pcie_generation": 4,
+    "pcie_lanes": 4,
+    "channel": 8,
+    "way": 4,
+    "die": 8,
+    "plane": 4,
+    "page_size": "8K",
+    "page_size_bytes": 8192,
+    "page_per_block": 512,
+    "nop": 1,
+    "superpage_allocation": "CWDP",
+    "page_allocation": "CWDP",
+    "nand_type": 2,
+    "dma_speed": "3000m",
+    "dma_speed_bytes_s": 3000000000.0,
+    "data_width_bytes": 16,
+    "tr": {
+      "0": "5us",
+      "1": "8us",
+      "2": "12us"
+    },
+    "tr_s": {
+      "0": 4.9999999999999996e-06,
+      "1": 8e-06,
+      "2": 1.2e-05
+    },
+    "tprog": {
+      "0": "450us",
+      "1": "900us",
+      "2": "1350us"
+    },
+    "cache_mode": "0",
+    "read_prefetch": "false",
+    "hil_work_interval": "1us",
+    "hil_request_queue_size": 1024
+  },
+  "memory_params": {
+    "memory_bus_clock": "425m",
+    "memory_system_bus_clock": "400m",
+    "sram_clock": "425m",
+    "sram_data_rate": 2,
+    "sram_data_width_bits": 36,
+    "sram_read_latency_cycles": 2,
+    "sram_write_latency_cycles": 2,
+    "strict_sram_bw_mb_s": 3825.0
+  },
+  "simplessd_row": {
+    "candidate": "officialseq_pg8_tr5_8_12_stack42_dma3000m_sram425_2cy",
+    "split": "holdout",
+    "workload": "hold_seqread_1m_qd8",
+    "rw": "read",
+    "bs": "1M",
+    "iodepth": "8",
+    "sim_bw_mb_s": "6715.229",
+    "measured_bw_mb_s": "6714.190",
+    "bw_err_pct": "0.02",
+    "sim_clat_mean_us": "1244.866",
+    "measured_clat_mean_us": "1204.056",
+    "lat_err_pct": "3.39",
+    "log_score": "0.033487",
+    "status": "ok",
+    "run_dir": "results/pm9a3-simplessd-official-seq-selected-260530/runs/officialseq_pg8_tr5_8_12_stack42_dma3000m_sram425_2cy/hold_seqread_1m_qd8"
+  },
+  "measured_validation_row": {
+    "split": "holdout",
+    "name": "alloc_seqread_1m_qd8",
+    "rw": "read",
+    "op": "read",
+    "bs": "1M",
+    "iodepth": "8",
+    "numjobs": "1",
+    "runtime_ms": "180002",
+    "bw_mb_s": "6714.191",
+    "iops": "6403.112",
+    "clat_mean_us": "1204.056",
+    "clat_p50_us": "1204.224",
+    "clat_p99_us": "1564.672",
+    "clat_p999_us": "1794.048",
+    "source": "storage_validation/results/pm9a3-allocated-file-read-260530/holdout.alloc_seqread_1m_qd8.json"
+  },
+  "profile_validation": {
+    "mean_log_score": 0.1455,
+    "rows": {
+      "cal_randread_4k_qd1": {
+        "simplessd_mb_s": 42.973,
+        "physical_mb_s": 48.031,
+        "error_pct": -10.53
+      },
+      "cal_randread_4k_qd32": {
+        "simplessd_mb_s": 1370.67,
+        "physical_mb_s": 1547.469,
+        "error_pct": -11.42
+      },
+      "cal_randread_4k_qd32_nj4": {
+        "simplessd_mb_s": 4480.412,
+        "physical_mb_s": 3788.461,
+        "error_pct": 18.26
+      },
+      "cal_seqread_1m_qd32": {
+        "simplessd_mb_s": 6715.085,
+        "physical_mb_s": 6734.465,
+        "error_pct": -0.29
+      },
+      "hold_randread_16k_qd8": {
+        "simplessd_mb_s": 1335.746,
+        "physical_mb_s": 1278.199,
+        "error_pct": 4.5
+      },
+      "hold_randread_4k_qd64_nj4": {
+        "simplessd_mb_s": 4479.726,
+        "physical_mb_s": 4487.282,
+        "error_pct": -0.17
+      },
+      "hold_seqread_1m_qd8": {
+        "simplessd_mb_s": 6715.229,
+        "physical_mb_s": 6714.19,
+        "error_pct": 0.02
+      }
+    }
+  },
+  "profile_reported_use": {
+    "official_storage_anchor": "Samsung PM9A3 7.68TB U.2 data sheet sequential read, 6700 MB/s",
+    "simplessd_stream": "6715.229 MB/s, +0.23% vs official 6700 MB/s",
+    "official_read_bound_latency_s": 73.555,
+    "integrated_simplessd_latency_s": 73.389,
+    "physical_holdout_note": "physical PM9A3 allocated-file 1 MB sequential QD8 stream is 6714.190 MB/s and remains a validation anchor only",
+    "integrated_pipeline": "SSD controller read scheduling -> device-local stream boundary -> Resa AXI-Stream input -> Resa compute -> SSD-controller DMA write to host memory"
+  },
+  "known_limitations": [
+    "4 KB QD32 x4 is overpredicted by +18.26%; treat as a SimpleSSD workload-presentation/model limitation.",
+    "Do not use this sequential-scan profile as evidence for exact small-random PM9A3 behavior."
+  ],
+  "warnings": [],
+  "reported_boundary": "CSD scaling rows are deterministic integrated simulation rows: selected PM9A3-class SimpleSSD sequential stream plus Resa AXI input, RTL-derived compute, and SSD-controller DMA writeback of compact encrypted results to host memory.",
+  "result_memory_model": {
+    "basis": "host result ciphertext array; one result ciphertext per storage group",
+    "result_ciphertext_bytes": 65536,
+    "result_ciphertexts_per_group": 1,
+    "vectors_per_group": 4096,
+    "device_result_buffering": "result ciphertexts are DMA-written to host memory"
+  },
+  "csd_input_source": "axis",
+  "csd_input_bw_mb_s": 64000.0,
+  "targets": [
+    4096,
+    8192,
+    16384,
+    32768,
+    65536,
+    131072,
+    262144,
+    524288,
+    1048576,
+    2097152,
+    4194304,
+    8388608,
+    16777216,
+    33554432,
+    67108864,
+    134217728
+  ],
+  "dimension": 512,
+  "rows_csv": "storage_validation/results/pm9a3-csd-scaling-hydia512-simplessdseq-260530/scaling_512.csv"
+}

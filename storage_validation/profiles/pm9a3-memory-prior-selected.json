@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "profile_id": "pm9a3-officialseq-selected-260530",
+  "candidate": "officialseq_pg8_tr5_8_12_stack42_dma3000m_sram425_2cy",
+  "role": "selected_pm9a3_class_simplessd_profile_for_csd_sequential_scan",
+  "paths": {
+    "summary_csv": "results/pm9a3-simplessd-official-seq-selected-260530/sim_summary.csv",
+    "config": "results/pm9a3-simplessd-official-seq-selected-260530/configs/officialseq_pg8_tr5_8_12_stack42_dma3000m_sram425_2cy.ssd.xml",
+    "measured_csv": "results/pm9a3-allocated-file-read-260530/summary_for_simplessd.csv",
+    "integrated_simplessd": "results/pm9a3-csd-integrated-officialseq-simplessdseq-260530"
+  },
+  "frozen_public_fields": {
+    "pcie": "Gen4 x4",
+    "channel": 8,
+    "nand_type": "TLC",
+    "target_device_class": "Samsung PM9A3 7.68TB class"
+  },
+  "model_fields": {
+    "way": 4,
+    "die": 8,
+    "plane": 4,
+    "effective_page_size": "8K",
+    "superpage_allocation": "CWDP",
+    "page_allocation": "CWDP",
+    "tR": {
+      "level0": "5us",
+      "level1": "8us",
+      "level2": "12us"
+    },
+    "nand_dma": "3000m x 16B",
+    "cache_mode": 0,
+    "read_prefetch": false,
+    "standalone_submission_latency": "42us",
+    "standalone_completion_latency": "42us",
+    "memory_bus_clock": "425m",
+    "sram": {
+      "clock": "425m",
+      "data_width_bits": 36,
+      "read_latency_cycles": 2,
+      "write_latency_cycles": 2
+    },
+    "namespace_capacity_for_simulation": "8G"
+  },
+  "validation": {
+    "mean_log_score": 0.1455,
+    "rows": {
+      "cal_randread_4k_qd1": {
+        "simplessd_mb_s": 42.973,
+        "physical_mb_s": 48.031,
+        "error_pct": -10.53
+      },
+      "cal_randread_4k_qd32": {
+        "simplessd_mb_s": 1370.670,
+        "physical_mb_s": 1547.469,
+        "error_pct": -11.42
+      },
+      "cal_randread_4k_qd32_nj4": {
+        "simplessd_mb_s": 4480.412,
+        "physical_mb_s": 3788.461,
+        "error_pct": 18.26
+      },
+      "cal_seqread_1m_qd32": {
+        "simplessd_mb_s": 6715.085,
+        "physical_mb_s": 6734.465,
+        "error_pct": -0.29
+      },
+      "hold_randread_16k_qd8": {
+        "simplessd_mb_s": 1335.746,
+        "physical_mb_s": 1278.199,
+        "error_pct": 4.50
+      },
+      "hold_randread_4k_qd64_nj4": {
+        "simplessd_mb_s": 4479.726,
+        "physical_mb_s": 4487.282,
+        "error_pct": -0.17
+      },
+      "hold_seqread_1m_qd8": {
+        "simplessd_mb_s": 6715.229,
+        "physical_mb_s": 6714.190,
+        "error_pct": 0.02
+      }
+    }
+  },
+  "reported_use": {
+    "official_storage_anchor": "Samsung PM9A3 7.68TB U.2 data sheet sequential read, 6700 MB/s",
+    "simplessd_stream": "6715.229 MB/s, +0.23% vs official 6700 MB/s",
+    "official_read_bound_latency_s": 73.555,
+    "integrated_simplessd_latency_s": 73.389,
+    "physical_holdout_note": "physical PM9A3 allocated-file 1 MB sequential QD8 stream is 6714.190 MB/s and remains a validation anchor only",
+    "integrated_pipeline": "SSD controller read scheduling -> device-local stream boundary -> Resa AXI-Stream input -> Resa compute -> SSD-controller DMA write to host memory"
+  },
+  "known_limitations": [
+    "4 KB QD32 x4 is overpredicted by +18.26%; treat as a SimpleSSD workload-presentation/model limitation.",
+    "Do not use this sequential-scan profile as evidence for exact small-random PM9A3 behavior."
+  ],
+  "boundary": "PM9A3-class SimpleSSD-selected storage profile plus Resa datapath timing."
+}

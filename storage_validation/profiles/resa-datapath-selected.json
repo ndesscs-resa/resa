@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "role": "current_resa_datapath_profile",
+  "database": {
+    "n_vectors": 100000000,
+    "embedding_dim": 768,
+    "vectors_per_group": 4096
+  },
+  "he_params": {
+    "ring_dim_N": 4096,
+    "coeff_bits": 51,
+    "storage_mode": "seeded_a",
+    "seed_bytes_per_group": 32
+  },
+  "storage_layout": {
+    "channel_count": 16,
+    "page_size_bytes": 16384,
+    "layout": "coefficient-striped continuous 51-bit packing"
+  },
+  "compute": {
+    "datapath_mode": "seeded_a_split",
+    "b_pes": 8,
+    "a_pes": 8,
+    "total_pes": 16,
+    "axis_width_bits": 1024,
+    "clock_mhz": 500
+  },
+  "writeback": {
+    "result_bytes": 65536,
+    "dma_bw_gbps": 10.0,
+    "pack_time_us": 0.5,
+    "path": "resa_axis_stream_to_ssd_controller_dma_to_host_memory"
+  },
+  "timing_evidence": {
+    "rtl_top": "asic/rtl/src/he_accelerator_seeded_a.v",
+    "ingress_top": "asic/rtl/src/he_accelerator_seeded_a_ingress.v",
+    "oracle_test": "asic/tb/tb_he_accelerator_seeded_a.v",
+    "cycle_rule": "per ciphertext compute cycles = max(ceil(N / b_pes), ceil(N / a_pes)); group cycles = embedding_dim * per-ciphertext cycles"
+  }
+}

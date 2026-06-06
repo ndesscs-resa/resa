@@ -1,0 +1,32 @@
+# Seeded-a b8+a8 HE Accelerator -- ASAP7 7nm Logic-Only Synthesis
+# SRAM macros are blackboxed and accounted for separately through PCACTI.
+#
+# Usage:
+#   export ASAP7_LIB_DIR=/path/to/asap7/asap7sc7p5t_28/LIB/NLDM
+#   cd syn && yosys synth_seeded_a_logic_only.ys
+
+read_verilog ./acc_sram_bank_bb.v
+read_verilog ./scalar_buffer_bb.v
+
+read_verilog ../rtl/src/reset_sync.v
+read_verilog ../rtl/src/continuous_unpack.v
+read_verilog ../rtl/src/chacha20_block_stream.v
+read_verilog ../rtl/src/a_seed_expander_chacha20.v
+read_verilog ../rtl/src/seeded_a_coeff_frontend.v
+read_verilog ../rtl/src/pe_mac.v
+read_verilog ../rtl/src/solinas_reduce.v
+read_verilog ../rtl/src/result_packer.v
+read_verilog ../rtl/src/he_accelerator_seeded_a.v
+
+synth -top he_accelerator_seeded_a -flatten
+
+dfflibmap -liberty $ASAP7_LIB_DIR/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib
+abc -liberty $ASAP7_LIB_DIR/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib -script +strash;map;print_stats
+opt_clean -purge
+
+stat -liberty $ASAP7_LIB_DIR/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib \
+     -liberty $ASAP7_LIB_DIR/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib \
+     -liberty $ASAP7_LIB_DIR/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib \
+     -liberty $ASAP7_LIB_DIR/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib \
+     -liberty $ASAP7_LIB_DIR/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib
+write_verilog synth_seeded_a_logic_only.v

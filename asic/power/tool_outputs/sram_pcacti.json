@@ -1,0 +1,44 @@
+{
+  "clock_mhz": 500.0,
+  "area_mm2": 0.02850351,
+  "leakage_mw": 31.193270000000002,
+  "dynamic_mw": 2.6536335,
+  "power_mw": 33.8469035,
+  "macros": [
+    {
+      "name": "accumulator",
+      "config": "accum_total_7nm.xml",
+      "bank_count": 8,
+      "area_mm2": 0.0278464,
+      "leakage_per_bank_mw": 3.70962,
+      "leakage_mw": 29.67696,
+      "read_energy_nj": 0.00253661,
+      "write_energy_nj": 0.00258522,
+      "read_accesses_per_cycle": 1.0,
+      "write_accesses_per_cycle": 1.0,
+      "dynamic_mw": 2.560915,
+      "total_power_mw": 32.237875,
+      "technology_nm": 7,
+      "temperature_k": 360,
+      "transistor_type": "FinFET"
+    },
+    {
+      "name": "query_buffer",
+      "config": "query_buf_7nm.xml",
+      "bank_count": 1,
+      "area_mm2": 0.00065711,
+      "leakage_per_bank_mw": 1.51631,
+      "leakage_mw": 1.51631,
+      "read_energy_nj": 0.000185437,
+      "write_energy_nj": 0.000153644,
+      "read_accesses_per_cycle": 1.0,
+      "write_accesses_per_cycle": 0.0,
+      "dynamic_mw": 0.0927185,
+      "total_power_mw": 1.6090285,
+      "technology_nm": 7,
+      "temperature_k": 360,
+      "transistor_type": "FinFET"
+    }
+  ],
+  "process_sanity_failures": []
+}

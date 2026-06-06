@@ -1,0 +1,4 @@
+path=/path/to/pm9a3-allocated-read-128g.bin
+size=137438953472
+blocks_512=268436288
+allocated_bytes=137439379456
